@@ -1,13 +1,11 @@
-import sys
-input = sys.stdin.readline
+N = int(input())
+li = [list(map(int, input().split())) for _ in range(N)]
+dp = [0 for _ in range(N + 1)]
 
-n = int(input())
-arr = [list(map(int, input().split())) for _ in range(n)]
-dp = [0 for _ in range(n + 1)]
+for i in range(N - 1, -1, -1):
+    if i + li[i][0] > N:
+        dp[i] = dp[i + 1]
+    else:
+        dp[i] = max(dp[i + 1], li[i][1] + dp[i + li[i][0]])
 
-for i in range(n):
-    for j in range(i + arr[i][0], n+1):
-        if dp[j] < dp[i] + arr[i][1]:
-            dp[j] = dp[i] + arr[i][1]
-
-print(dp[-1])
+print(dp[0])
