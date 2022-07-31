@@ -1,14 +1,13 @@
 n, m = map(int, input().split())
-arr1 = set()
-arr2 = set()
-
+dict = {}
+arr = []
 for _ in range(n):
-    arr1.add(input())
+    dict[input()] = 1
 for _ in range(m):
-    arr2.add(input())
+    a = input()
+    if a in dict:
+        arr.append(a)
 
-ans = sorted(list(arr1 & arr2))
-
-print(len(ans))
-for i in ans:
+print(len(arr))
+for i in sorted(arr):
     print(i)
