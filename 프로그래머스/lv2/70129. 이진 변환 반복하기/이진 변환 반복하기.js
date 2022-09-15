@@ -1,6 +1,5 @@
 function solution(s) {
     let [tmp, cnt] = [0, 0]
-    console.log(s.replace(/0/g, ""))
     while (s !== '1') {
         let sLen = s.length
         s = s.replace(/0/g, "").length
