@@ -21,9 +21,9 @@ function isPrime(num) {
 
 function solution(n, k) {
     var answer = 0;
-    const num = n.toString(k).split('0')
+    const num = n.toString(k).split('0').reduce((acc,v)=> v === '' ? [...acc] : [...acc,+v],[]);
     for (let i of num) {
-        if (i.length > 0 && isPrime(Number(i))) {
+        if (isPrime(Number(i))) {
             answer++
         }
     }
