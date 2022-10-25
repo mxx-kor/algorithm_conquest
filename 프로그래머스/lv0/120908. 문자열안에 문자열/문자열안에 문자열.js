@@ -1,0 +1,1 @@
+const solution = (str1, str2) => str1.match(str2) ? 1 : 2;
