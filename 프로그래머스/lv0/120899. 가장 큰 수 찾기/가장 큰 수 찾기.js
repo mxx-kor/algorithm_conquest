@@ -1,0 +1,1 @@
+const solution = (array) => array.map((el, i) => [el, i]).sort((a, b) => b[0] - a[0])[0]
