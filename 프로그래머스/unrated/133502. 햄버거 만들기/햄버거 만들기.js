@@ -8,10 +8,7 @@ function solution(ingredient) {
         if (stack.length >= 4) {
             const isBurger = stack.slice(-4).join('');
             if (isBurger === "1231") {
-                stack.pop()
-                stack.pop()
-                stack.pop()
-                stack.pop()
+                stack.splice(stack.length - 4, 4)
                 ans += 1
             }
         }
