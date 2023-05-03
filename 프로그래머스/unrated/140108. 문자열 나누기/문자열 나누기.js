@@ -1,21 +1,22 @@
 function solution(s) {
-    let cnt = 0;
-    let stack = [];
+    let arr = [];
     
-    [...s].map((char, idx) => {
-        stack.push(s[idx])
+    while(s.length) {
+        let cnt = 0
+        let same = 0;
+        let diff = 0;
         
-        const same = stack.filter((item) => item === stack[0])
-        const diff = stack.filter((item) => item !== stack[0])
-        
-        if (same.length === diff.length) {
-            cnt += 1
-            stack = []
+        for (let i = 0; i < s.length; i++) {
+            s[0] === s[i] ? same++ : diff++
+            if (same === diff) {
+                cnt = i + 1
+                break
+            }
         }
-    })
-    
-    if (stack.length) {
-        cnt += 1
+        
+        arr.push(s.slice(0, cnt))
+        s = s.slice(cnt);
+        if (cnt === 0) break
     }
-    return cnt
+    return arr.length
 }
