@@ -17,7 +17,6 @@ function solution(N, road, K) {
                 queue.push(next)
             }
         })
-        console.log(dist)
     }
 
     return dist.filter((item) => item <= K).length
