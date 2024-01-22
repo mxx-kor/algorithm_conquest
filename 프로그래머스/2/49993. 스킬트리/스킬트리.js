@@ -4,8 +4,8 @@ function solution(skill, skill_trees) {
     
     skill_trees.forEach((skill_tree) => {
         const skill_only = skill_tree.replace(regex, "")
-        const trimed_skill = skill.slice(0, skill_only.length)
-        if (trimed_skill === skill_only) {
+        
+        if (skill.startsWith(skill_only)) {
             ans++
         }
     })
